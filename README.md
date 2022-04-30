@@ -1,2 +1,2 @@
 # virtual-keyboard
-https://rolling-scopes-school.github.io/pavelzabalotny/virtual-keyboard
+https://pavelzabalotny.github.io/virtual-keyboard
