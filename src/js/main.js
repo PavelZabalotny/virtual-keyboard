@@ -17,6 +17,7 @@ function getKey(code) {
 
 function addText(key, textarea) {
   let newKey
+  let selectionStart
   switch (key) {
     case 'Enter':
       newKey = '\n'
@@ -39,19 +40,22 @@ function addText(key, textarea) {
     case 'Tab':
       newKey = '\t'
       break
+    case 'Backspace':
+      selectionStart = textarea.selectionStart > 0 ? textarea.selectionStart - 1 : 0
+      textarea.setRangeText('', selectionStart, textarea.selectionEnd, 'select')
+      return
     case 'Shift':
     case 'CapsLock':
     case 'Ctrl':
     case 'Win':
     case 'Alt':
     case 'Del':
-    case 'Backspace':
       newKey = ''
       break
     default:
       newKey = key
   }
-  return textarea.setRangeText(newKey, textarea.selectionStart, textarea.selectionEnd, 'end')
+  textarea.setRangeText(newKey, textarea.selectionStart, textarea.selectionEnd, 'end')
 }
 
 /**
@@ -80,43 +84,6 @@ function keyDownEvent(e, keys, textarea) {
         globalLang = globalLang === 'en' ? 'ru' : 'en'
         localStorage.setItem('VK-language', globalLang)
       }
-      /* let key = ''
-      switch (e.code) {
-        case 'Enter':
-          key = '\n'
-          break
-        case 'Backquote':
-          key = '`'
-          break
-        case 'ArrowUp':
-          key = '↑'
-          break
-        case 'ArrowDown':
-          key = '↓'
-          break
-        case 'ArrowLeft':
-          key = '←'
-          break
-        case 'ArrowRight':
-          key = '→'
-          break
-        case 'Tab':
-          key = '\t'
-          break
-        case 'ShiftLeft':
-        case 'ShiftRight':
-        case 'CapsLock':
-        case 'ControlLeft':
-        case 'ControlRight':
-        case 'MetaLeft':
-        case 'AltLeft':
-        case 'AltRight':
-        case 'Delete':
-        case 'Backspace':
-          break
-        default:
-          key = getKey(e.code)
-      } */
       addText(getKey(e.code), textarea)
     }
   })
@@ -132,7 +99,6 @@ function mouseDownEvent(e, textarea) {
 
   targetKey?.childNodes.forEach((el) => {
     if (!el.classList.contains('hidden')) {
-      // console.log(el)
       el.childNodes.forEach((key) => {
         if (!key.classList.contains('hidden')) {
           addText(key.textContent, textarea)
