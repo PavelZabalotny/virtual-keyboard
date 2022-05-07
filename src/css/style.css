@@ -27,6 +27,7 @@ section {
     margin: 10px auto 10px;
     padding: 10px;
     font-size: 18px;
+    resize: none;
     color: #444444;
     outline: none;
     border: 2px solid #004134;
@@ -36,6 +37,10 @@ section {
 .keyboard-section {
     background: #004134;
     box-shadow: 0 0 50px rgb(0 0 0 / 50%);
+}
+
+.keyboard-section .wrapper {
+    row-gap: 15px;
 }
 
 .wrapper {
@@ -61,6 +66,7 @@ section {
     flex-direction: column;
     justify-content: flex-start;
     gap: 7px;
+    margin-top: 30px;
 }
 
 .keyboard__row {
@@ -91,28 +97,29 @@ section {
     box-sizing: border-box;
 }
 
-/*.keyboard__key span {
-    position: absolute;
-}
-
-.shift-key {
-    top: 5px;
-    left: 10px;
-    font-size: 0.625rem;
-}*/
-
 .keyboard__key:active,
-.keyboard__key:hover {
+.keyboard__key:hover,
+.keyboard__key--active {
     background: rgba(255, 255, 255, 0.12);
 }
 
-.keyboard__key:active {
+.keyboard__key:active,
+.keyboard__key--active {
     transform: scale(0.95);
 }
 
 .description {
     text-align: center;
     color: #a0cd66c7;
+}
+
+.author {
+    text-align: center;
+    color: rgb(83 173 164 / 78%);
+}
+
+h4 {
+    margin: 5px;
 }
 
 .space {

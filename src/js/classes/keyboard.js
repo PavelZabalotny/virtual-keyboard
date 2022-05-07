@@ -6,7 +6,11 @@ import keysData from '../keys/index.js'
 import Key from './key.js'
 
 export default class Keyboard {
-  static init() {
+  constructor(globalLang) {
+    this.globalLang = globalLang
+  }
+
+  init() {
     const keyboard = pattern.map((row) => {
       const el = document.createElement('div')
       el.classList.add('keyboard__row')
@@ -27,13 +31,15 @@ export default class Keyboard {
               /**
                * create key for all languages
                */
-              const element = new Key(code, value, shiftValue, currentLanguage)
+              const element = new Key(code, value, shiftValue, currentLanguage, this.globalLang)
               keyElement.append(element.render())
               // add necessary class for big buttons
               const bigButtonPatterns = ['ShiftLeft', 'ShiftRight', 'Tab', 'Backspace', 'CapsLock', 'Enter', 'Space']
               if (bigButtonPatterns.includes(code)) {
                 keyElement.classList.add(code.toLowerCase())
               }
+              // add data-code
+              keyElement.dataset.code = code
             }
           })
         })
@@ -55,8 +61,11 @@ export default class Keyboard {
     keyboardDiv.append(...keyboard)
     const footerInfo = document.createElement('h4')
     footerInfo.classList.add('description')
-    footerInfo.innerHTML = 'Pavel Zabalotny (RS School - 2022)'
-    wrapper.append(keyboardDiv, footerInfo)
+    footerInfo.innerHTML = 'Press Ctrl + Alt for change language'
+    const author = document.createElement('h4')
+    author.classList.add('author')
+    author.innerHTML = 'Pavel Zabalotny (RS School - 2022)'
+    wrapper.append(keyboardDiv, footerInfo, author)
     keyboardSection.append(wrapper)
 
     return keyboardSection
