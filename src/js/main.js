@@ -18,6 +18,7 @@ function getKey(code) {
 function addText(key, textarea) {
   let newKey
   let selectionStart
+  let selectionEnd
   switch (key) {
     case 'Enter':
       newKey = '\n'
@@ -41,15 +42,22 @@ function addText(key, textarea) {
       newKey = '\t'
       break
     case 'Backspace':
-      selectionStart = textarea.selectionStart > 0 ? textarea.selectionStart - 1 : 0
+      selectionStart = textarea.selectionStart > 0
+        ? textarea.selectionStart - 1
+        : 0
       textarea.setRangeText('', selectionStart, textarea.selectionEnd, 'select')
+      return
+    case 'Del':
+      selectionEnd = textarea.selectionEnd > textarea.length
+        ? textarea.length
+        : textarea.selectionEnd + 1
+      textarea.setRangeText('', textarea.selectionStart, selectionEnd, 'select')
       return
     case 'Shift':
     case 'CapsLock':
     case 'Ctrl':
     case 'Win':
     case 'Alt':
-    case 'Del':
       newKey = ''
       break
     default:
