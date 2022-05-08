@@ -12,6 +12,7 @@ module.exports = {
   },
   rules: {
     semi: [2, 'never'],
-    'no-console': 'off',
+    'linebreak-style': 0,
+    'import/extensions': ['error', 'always', { ignorePackages: true }],
   },
 }

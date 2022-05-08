@@ -1,8 +1,5 @@
-// eslint-disable-next-line import/extensions
 import pattern from '../pattern.js'
-// eslint-disable-next-line import/extensions
 import keysData from '../keys/index.js'
-// eslint-disable-next-line import/extensions
 import Key from './key.js'
 
 export default class Keyboard {

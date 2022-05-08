@@ -1,8 +1,5 @@
-// eslint-disable-next-line import/extensions
 import Keyboard from './classes/keyboard.js'
-// eslint-disable-next-line import/extensions
 import Textarea from './classes/textarea.js'
-// import languageData from './keys'
 
 let globalLang = localStorage.getItem('VK-language')
 const app = Textarea.init()
@@ -13,21 +10,14 @@ const keyButtons = document.querySelectorAll('.keyboard__key')
 let isShift = false
 let isCapsLock = false
 
-/* function getKey(code) {
-  return languageData[globalLang].filter((el) => el.code === code)[0].value
-} */
-
 function handleShift() {
   isShift = !isShift
-  // console.log(key)
-  // console.log(keyButtons)
+
   keyButtons.forEach((el) => {
-    // console.log(el)
     el.childNodes.forEach((item) => {
       if (!item.classList.contains('hidden')) {
         // console.log(item)
         item.childNodes.forEach((s) => {
-          // TODO: refactor depends on caps lock status
           if (!isCapsLock) {
             if (s.classList.contains('shift-press') || s.classList.contains('shift-release')) {
               s.classList.toggle('hidden')
@@ -155,7 +145,6 @@ function mouseDownEvent(e, textarea, isKeyboard = false) {
       targetKey.classList.toggle('keyboard__key--active')
       handleShift()
     }
-    // TODO: CapsLock
     if (/Caps/.test(targetKey?.dataset.code)) {
       targetKey.classList.toggle('keyboard__key--active')
       handleCaps()
