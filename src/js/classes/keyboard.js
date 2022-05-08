@@ -68,8 +68,12 @@ export default class Keyboard {
     footerInfo.classList.add('description')
     footerInfo.innerHTML = 'Press left Ctrl + Alt for change language'
     const author = document.createElement('h4')
+    const authorLink = document.createElement('a')
+    authorLink.href = 'https://github.com/PavelZabalotny/virtual-keyboard/tree/virtual-keyboard'
+    authorLink.target = '_blank'
+    authorLink.innerHTML = 'Pavel Zabalotny (RS School - 2022)'
     author.classList.add('author')
-    author.innerHTML = 'Pavel Zabalotny (RS School - 2022)'
+    author.append(authorLink)
     wrapper.append(keyboardDiv, footerInfo, author)
     keyboardSection.append(wrapper)
 

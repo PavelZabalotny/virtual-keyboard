@@ -118,6 +118,15 @@ section {
     color: rgb(83 173 164 / 78%);
 }
 
+.author a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.author a:hover {
+    filter: brightness(85%);
+}
+
 h4 {
     margin: 5px;
 }
