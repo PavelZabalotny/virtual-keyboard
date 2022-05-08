@@ -34,7 +34,21 @@ export default class Keyboard {
               const element = new Key(code, value, shiftValue, currentLanguage, this.globalLang)
               keyElement.append(element.render())
               // add necessary class for big buttons
-              const bigButtonPatterns = ['ShiftLeft', 'ShiftRight', 'Tab', 'Backspace', 'CapsLock', 'Enter', 'Space']
+              const bigButtonPatterns = [
+                'ShiftLeft',
+                'ShiftRight',
+                'Tab',
+                'Backspace',
+                'CapsLock',
+                'Enter',
+                'Space',
+                'Delete',
+                'ControlLeft',
+                'ControlRight',
+                'MetaLeft',
+                'AltLeft',
+                'AltRight',
+              ]
               if (bigButtonPatterns.includes(code)) {
                 keyElement.classList.add(code.toLowerCase())
               }
@@ -61,7 +75,7 @@ export default class Keyboard {
     keyboardDiv.append(...keyboard)
     const footerInfo = document.createElement('h4')
     footerInfo.classList.add('description')
-    footerInfo.innerHTML = 'Press Ctrl + Alt for change language'
+    footerInfo.innerHTML = 'Press left Ctrl + Alt for change language'
     const author = document.createElement('h4')
     author.classList.add('author')
     author.innerHTML = 'Pavel Zabalotny (RS School - 2022)'

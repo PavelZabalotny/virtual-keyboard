@@ -77,8 +77,8 @@ section {
 
 .keyboard__key {
     height: 45px;
-    min-width: 45px;
-    padding: 0 15px;
+    width: 45px;
+    /*padding: 0 15px;*/
     border-radius: 4px;
     border: none;
     background: rgba(255, 255, 255, 0.2);
@@ -123,24 +123,37 @@ h4 {
 }
 
 .space {
-    min-width: 304px;
+    width: 304px;
 }
 
 .shiftleft {
-    min-width: 104px;
+    width: 104px;
 }
 
 .shiftright {
-    min-width: 118px;
+    width: 112px;
 }
 
 .capslock,
 .enter {
-    min-width: 111px;
+    width: 108px;
 }
 
 .backspace {
-    min-width: 126px;
+    width: 119px;
+}
+
+.tab,
+.delete {
+    width: 56px;
+}
+
+.controlleft,
+.controlright,
+.metaleft,
+.altleft,
+.altright {
+    width: 60px;
 }
 
 .hidden {

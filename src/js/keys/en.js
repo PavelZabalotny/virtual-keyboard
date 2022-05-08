@@ -67,12 +67,12 @@ export default [
   {
     code: 'Backspace',
     value: 'Backspace',
-    shiftValue: null,
+    shiftValue: 'Backspace',
   },
   {
     code: 'Tab',
     value: 'Tab',
-    shiftValue: null,
+    shiftValue: 'Tab',
   },
   {
     code: 'KeyQ',
@@ -142,12 +142,12 @@ export default [
   {
     code: 'Delete',
     value: 'Del',
-    shiftValue: null,
+    shiftValue: 'Del',
   },
   {
     code: 'CapsLock',
     value: 'CapsLock',
-    shiftValue: null,
+    shiftValue: 'CapsLock',
   },
   {
     code: 'KeyA',
@@ -207,12 +207,12 @@ export default [
   {
     code: 'Enter',
     value: 'Enter',
-    shiftValue: null,
+    shiftValue: 'Enter',
   },
   {
     code: 'ShiftLeft',
     value: 'Shift',
-    shiftValue: null,
+    shiftValue: 'Shift',
   },
   {
     code: 'KeyZ',
@@ -267,56 +267,56 @@ export default [
   {
     code: 'ShiftRight',
     value: 'Shift',
-    shiftValue: null,
+    shiftValue: 'Shift',
   },
   {
     code: 'ControlLeft',
     value: 'Ctrl',
-    shiftValue: null,
+    shiftValue: 'Ctrl',
   },
   {
     code: 'MetaLeft',
     value: 'Win',
-    shiftValue: null,
+    shiftValue: 'Win',
   },
   {
     code: 'AltLeft',
     value: 'Alt',
-    shiftValue: null,
+    shiftValue: 'Alt',
   },
   {
     code: 'Space',
     value: ' ',
-    shiftValue: null,
+    shiftValue: ' ',
   },
   {
     code: 'AltRight',
     value: 'Alt',
-    shiftValue: null,
+    shiftValue: 'Alt',
   },
   {
     code: 'ControlRight',
     value: 'Ctrl',
-    shiftValue: null,
+    shiftValue: 'Ctrl',
   },
   {
     code: 'ArrowLeft',
     value: '←',
-    shiftValue: null,
+    shiftValue: '←',
   },
   {
     code: 'ArrowUp',
     value: '↑',
-    shiftValue: null,
+    shiftValue: '↑',
   },
   {
     code: 'ArrowDown',
     value: '↓',
-    shiftValue: null,
+    shiftValue: '↓',
   },
   {
     code: 'ArrowRight',
     value: '→',
-    shiftValue: null,
+    shiftValue: '→',
   },
 ]
