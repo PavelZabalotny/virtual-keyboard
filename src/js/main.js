@@ -1,7 +1,7 @@
 import Keyboard from './classes/keyboard.js'
 import Textarea from './classes/textarea.js'
 
-let globalLang = localStorage.getItem('VK-language')
+let globalLang = localStorage.getItem('VK-language') || 'en'
 const app = Textarea.init()
 app.append(new Keyboard(globalLang).init())
 document.body.append(app)
