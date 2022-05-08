@@ -16,7 +16,6 @@ function handleShift() {
   keyButtons.forEach((el) => {
     el.childNodes.forEach((item) => {
       if (!item.classList.contains('hidden')) {
-        // console.log(item)
         item.childNodes.forEach((s) => {
           if (!isCapsLock) {
             if (s.classList.contains('shift-press') || s.classList.contains('shift-release')) {
@@ -181,7 +180,6 @@ function keyDownEvent(e, keys, textarea) {
   if (e.shiftKey && e.key === 'Shift' && !e.repeat) {
     handleShift()
   }
-  // TODO: CapsLock
   if (e.code === 'CapsLock') {
     handleCaps(e)
     isCapsLock = !isCapsLock

@@ -11,15 +11,11 @@ export default class Keyboard {
     const keyboard = pattern.map((row) => {
       const el = document.createElement('div')
       el.classList.add('keyboard__row')
-      /**
-       *
-       */
+
       const rowMap = row.map((patternCode) => {
         const keyElement = document.createElement('div')
         keyElement.classList.add('keyboard__key')
-        /**
-         *
-         */
+
         Object.entries(keysData).forEach((keys) => {
           const currentLanguage = keys[0]
           const currentLanguageKeys = keys[1]
@@ -54,9 +50,7 @@ export default class Keyboard {
             }
           })
         })
-        /**
-         *
-         */
+
         return keyElement
       })
       el.append(...rowMap)
