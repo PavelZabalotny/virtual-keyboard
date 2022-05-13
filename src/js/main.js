@@ -66,14 +66,14 @@ function addText(key, textarea) {
       break
     case 'Backspace':
       selectionStart = textarea.selectionStart > 0
-        ? textarea.selectionStart - 1
+        ? textarea.selectionStart
         : 0
       textarea.setRangeText('', selectionStart, textarea.selectionEnd, 'select')
       return
     case 'Del':
       selectionEnd = textarea.selectionEnd > textarea.length
         ? textarea.length
-        : textarea.selectionEnd + 1
+        : textarea.selectionEnd
       textarea.setRangeText('', textarea.selectionStart, selectionEnd, 'select')
       return
     case 'Shift':
