@@ -1,0 +1,26 @@
+{
+  "name": "virtual-keyboard",
+  "version": "1.0.0",
+  "description": "https://github.com/rolling-scopes-school/tasks/blob/master/tasks/virtual-keyboard/virtual-keyboard-en.md",
+  "main": "index.js",
+  "scripts": {
+    "lint":"eslint ./",
+    "lint:fix":"eslint ./ --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PavelZabalotny/virtual-keyboard.git"
+  },
+  "author": "Pavel Zabalotny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PavelZabalotny/virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/PavelZabalotny/virtual-keyboard#readme",
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}
